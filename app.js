@@ -1,9 +1,16 @@
 $(document).ready(function () {
-    fizzbuzz();
+    let val = prompt("enter a number");
+    let num = parseInt(val, 10);
+    if (isNaN(num) || val % 1) {
+        alert('not a number, or used decimal!');
+    }
+    else {
+        fizzbuzz(num);
+    }
 });
 
-fizzbuzz = () => {
-    for (let i = 1; i <= 100; i++) {
+fizzbuzz = (val) => {
+    for (let i = 1; i <= val; i++) {
         if (i % 3 == 0 && i % 5 == 0) {
             $("body").append("fizzbuzz<br>");
         }
